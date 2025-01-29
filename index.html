@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Vitor Moreiran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="#introduction" class="nav-link">
+            <span class="separator">〇</span> INÍCIO
+        </a>
+        <a href="#projects" class="nav-link">
+            <span class="separator">〇</span> PROJETOS
+        </a>
+        <a href="#about" class="nav-link">
+            <span class="separator">〇</span> SOBRE
+        </a>
+        <a href="#services-id" class="nav-link">
+            <span class="separator">〇</span> SERVIÇOS
+        </a>
+        <a href="#contact" class="nav-link">
+            <span class="separator">〇</span> CONTATO
+        </a>
+    </nav>
+    
+    <div class="intro">
+        <!-- Gradiente -->
+        <div class="gradient">
+            <!--<img src="banner.png" alt="Imagem sobre o portfólio">-->    
+        </div>
+
+        <!-- Wrapper Principal -->
+        <div class="content-wrapper">
+            <!-- Texto de Introdução + Serviços -->
+            <div class="left-content">
+                <section id="introduction">
+                    <h1>Olá!</h1>
+                    <p>
+                        Me chamo <strong>Vitor Moreiran</strong>, trabalho com 
+                        <strong>imagem, vídeo e áudio</strong> em contato com 
+                        clientes e marcas independentemente e em agências de alta performance desde 2020.
+                    </p>
+                    <p>
+                        Ao longo dos anos venho construindo um portfólio técnico e experimental que busca explorar funcionalidades diversas no uso de tecnologias de edição e criação de recursos digitais, com inspirações na <strong>cultura virtual, história da arte</strong> e <strong>moda</strong>.
+                    </p>
+                    <a href="#services" class="cta-button">Navegue pelos meus projetos</a>
+                </section>
+
+                <!-- Área de Serviços -->
+                <section id="services">
+                    <div class="service-card"><img src="assets/image/contato.png"></div>
+                    <div class="service-card"><img src="assets/image/obras.png"></div>
+                </section>
+            </div>
+
+            <!-- Área de Sobre -->
+            <section id="banner3">
+                <div class="banner3-banner">
+                    <img src="assets/image/sobre-img.png" alt="Imagem sobre o portfólio">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="filter-menu">
+        <div class="categories">
+            <p><strong>PROJETOS</strong></p>
+            <span class="separator">\</span>
+            <span class="category">COMERCIAL</span>
+            <span class="separator">\</span>
+            <span class="category">AUTORAL</span>
+            <span class="separator">\</span>
+            <span class="category">VÍDEO</span>
+            <span class="separator">\</span>
+            <span class="category">3D</span>
+            <span class="separator">\</span>
+            <span class="category">SOCIAL</span>
+            <span class="separator">\</span>
+        </div>
+    </div>
+    <section id="projects">
+        <div class="projects-container">
+            <!-- Os cards serão gerados dinamicamente aqui -->
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">X</button>
+            <img id="modal-image" src="" alt="Detalhes do Projeto">
+            <div id="modal-details"></div>
+            <a id="modal-link" href="#" target="_blank">Acessar link</a>
+        </div>
+    </div>
+    
+ <!-- <section id="conjunto">
+        <img src="assets/image/cards-conjunto.png" alt="Banner Image" class="banner-image">
+    </section>-->  
+        
+    
+
+    <section id="about">
+        <div class="about-wrapper">
+            <!-- Texto principal -->
+            <div class="about-text">
+                <h2 class="section-title">SOBRE</h2>
+                <p class="about-description">
+                    Olá! Me chamo <strong>Vitor Moreiran</strong>. Sou um artista visual e criativo multidisciplinar de 25 anos, com experiência em design, edição de vídeo e modelagem 3D desde 2020. Minha formação em Publicidade e Propaganda pela UFPR me ajudou a desenvolver uma abordagem técnica estratégica para conectar narrativas visuais expressivas com o uso experimental de tecnologias emergentes.<br><br>
+                    Já atuei em agências enquanto criativo, desenvolvendo campanhas e conteúdos para canais digitais, incluindo posts interativos, vídeos, animações e e-mails marketing. Trabalhei com marcas de moda, saúde, varejo e tecnologia, sempre focando em soluções visuais inovadoras e impactantes que garantissem engajamento e performance.<br><br>
+                    Como artista, exploro a interseção entre arte e tecnologia, criando projetos que combinam storytelling visual e ferramentas digitais. Participei de exposições como o NFT Brasil (Pavilhão da Bienal, São Paulo) e o SSA Mapping Festival (Mercado Modelo, Salvador), apresentando obras que integram narrativas imersivas, modelagem 3D e sistemas reativos a som.<br><br>
+                    Meu objetivo é colaborar com projetos que desafiem o convencional, utilizando design, tecnologia e criatividade para contar histórias de forma visualmente marcante, impactando públicos de maneira autêntica e transformadora.
+                </p>
+                <div class="about-links">
+                    <a href="#" class="link">Linkedin</a>
+                    <a href="#" class="link">Behance</a>
+                    <a href="#" class="link">Whatsapp</a>
+                    <a href="#" class="link">Zora</a>
+                    <a href="#" class="link">X</a>
+                    <a href="#" class="link">Instagram</a>
+                    <a href="#" class="link">Opensea</a>
+                    <a href="mailto:vitormoreiran@gmail.com" class="link">E-mail</a>
+                </div>
+            </div>
+
+            <!-- Bloco de serviços e formulário -->
+            <div class="services-form">
+                <!-- Serviços -->
+                <div id="services-id" class="services">
+                    <h2 class="section-title">SERVIÇOS</h2>
+                    <p class="services-description">
+                        Criação de Logotipo ▪ Identidade Visual ▪ Campanhas Multicanal ▪ Modelagem e Animação 3D.   <br><br>
+                        Inclui briefing, pesquisa, desenvolvimento de propostas, ajustes e entregas de arquivos em diversos formatos.
+                    </p>
+                    <p class="contact-info">
+                        <strong>Vitor Moreiran</strong><br>
+                        <a href="mailto:vitormoreiran@gmail.com">vitormoreiran@gmail.com</a><br>
+                        +55 (12) 99145-2549
+                    </p>
+                </div>
+
+                <!-- Formulário -->
+                <form class="contact-form" action="https://formspree.io/f/myzkwyyv" method="POST">
+                    <p class="form-intro">Tem interesse, sugestão ou feedback? Entre em contato por aqui:</p>
+                    <div class="form-fields">
+                        <input type="text" class="form-input" name="name" placeholder="Nome" required>
+                        <input type="email" class="form-input" name="email" placeholder="E-mail" required>
+                    </div>
+                    <textarea class="form-textarea" name="message" placeholder="Escreva sua mensagem aqui" required></textarea>
+                    <button type="submit" class="form-submit">Enviar</button>
+                </form>
+                
+            </div>
+        </div>
+
+        <!-- Banner inferior -->
+        <div class="about-banner"><!--<img src="Frame 67.png" alt="Imagem sobre o portfólio"> --> </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

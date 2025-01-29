@@ -1,0 +1,694 @@
+/* ===================================================
+   RESET BÁSICO
+   =================================================== */
+   html {
+    scroll-behavior: smooth; /* Scroll suave */
+}
+
+   body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #000;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory; /* Configura o comportamento de snap vertical */
+    overflow-y: scroll; /* Permite rolagem na vertical */
+    height: 100vh; /* Garante que o conteúdo ocupe 100% da altura da tela */    
+}
+
+/* ===================================================
+   INTRO
+   =================================================== */
+.intro {
+    max-width: 1440px; /* Ajuste para 1440px */
+    margin: 0 auto;    /* Centraliza horizontalmente */
+    padding: 30px 0px 120px 0px;
+    box-sizing: border-box;
+}
+.gradient {
+    width: 1440px;/* Ajuste para 1440px / 1920px */
+    height: 21.42vw; /* Mantido em proporção */
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gradient::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background: radial-gradient(circle at 65% 35%, 
+        #E1C858 5%, #B59466 25%, #CE473D 45%, #6AC460 65%, #E1C858 90%);
+    animation: animateGradient 10s infinite linear alternate;
+    filter: blur(80px);
+}
+
+@keyframes animateGradient {
+    0% {
+        transform: scale(1) translate(-5%, -5%);
+    }
+    25% {
+        transform: scale(1.2) translate(5%, 10%);
+    }
+    50% {
+        transform: scale(1.4) translate(-10%, -15%);
+    }
+    75% {
+        transform: scale(1.2) translate(10%, 5%);
+    }
+    100% {
+        transform: scale(1) translate(-5%, -5%);
+    }
+}
+
+.gradient img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+
+.content-wrapper {
+    width: 1440px; /* Ajuste para 1440px */
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+/* Área de Introdução */
+.left-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 100px;
+}
+
+#introduction {
+    max-width: 695px;
+}
+
+#introduction h1 { 
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 150%;
+    letter-spacing: 0.33em;
+    margin-bottom: 20px;
+}
+
+#introduction p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 120%;
+    letter-spacing: 0.22em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    padding: 20px 00px 10px 00px;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    font-size: 20px;
+    letter-spacing: 0.23em;
+}
+
+/* Área de Sobre */
+#banner3 {
+    max-width: 660px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.banner3-banner {
+    width: 100%;
+    height: 960px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner3-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Área de Serviços */
+#services {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.service-card {
+    width: 100%;
+    height: 120px;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;  /* Alinha a imagem à esquerda */
+}
+
+.service-card:hover {
+    background: #ccc;
+    transform: scale(1.00);
+}
+
+/* ===================================================
+   PROJETOS
+/* ===================================================
+
+/* Estilo para a Sessão de Projetos */
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    background-color: transparent;
+    scroll-snap-align: center; /* Faz com que a área de projects se centralize */
+}
+
+/* Estilizando o contêiner com o scroll vertical e efeito magnético */
+.projects-container {
+    width: 1440px; /* Ocupa 100% da largura da tela */
+    height: 960px; /* Altura fixa da seção */
+    overflow-y: scroll; /* Permite rolagem vertical */
+    overflow-x: hidden; /* Desativa rolagem horizontal */
+    display: flex;
+    flex-direction: column; /* Coloca os itens em uma coluna */
+    gap: 33px; /* Espaçamento entre os cards */
+    scroll-snap-type: y mandatory; /* Ativa o efeito magnético vertical */
+    padding-bottom: 0;
+}
+
+/* Estilizando os itens dentro do contêiner para se ajustarem ao efeito magnético */
+.project-card {
+    width: 1440px; /* Tamanho fixo */
+    height: 960px; /* Tamanho fixo */
+    scroll-snap-align: start; /* Faz com que o item se alinhe ao começar o scroll */
+    flex-shrink: 0; /* Impede que os cards encolham */
+    cursor: pointer; /* Adiciona o cursor de pointer para indicar que é clicável */
+}
+
+/* Para Webkit (Chrome, Safari, etc.) */
+.projects-container::-webkit-scrollbar {
+    width: 6px; /* Barra de rolagem vertical */
+}
+
+.projects-container::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+.projects-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+}
+
+.projects-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilo de cada Card */
+.project-card {
+    position: relative;
+    width: 1440px; /* Tamanho fixo */
+    height: 960px; /* Tamanho fixo */
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Imagem de fundo do card */
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Caixa de texto sobreposta ao card */
+.card-text {
+    position: absolute;
+    bottom: 160px; /* Alinha a 160px do fundo */
+    left: 100px; /* Alinha a 100px da esquerda */
+    width: 452px;
+    height: 341px;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 33px; /* Espaçamento entre as 3 seções principais */
+}
+/* Banner abaixo da seção de projetos */
+#conjunto {
+    width: 1440px;
+    height: 360px;
+    margin: -60px auto 0; /* 30px de margem superior e centralizado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Background caso a imagem não carregue */
+}
+
+.conjunto-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem ocupe o espaço do banner */
+}
+
+/* Agrupamento de título, subtítulo e descrição */
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaçamento entre título, subtítulo e descrição */
+}
+
+/* Título */
+.project-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Semibold */
+    font-size: 48px;
+    line-height: 130%; /* 1.5 */
+    letter-spacing: 0.33em; /* 33% */
+    margin: 0;
+}
+
+/* Subtítulo */
+.project-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100; /* Extra Light */
+    font-size: 22px;
+    line-height: 180%; /* 1.5 */
+    letter-spacing: 0.66em; /* 66% */
+    margin: 0;
+}
+
+/* Descrição */
+.project-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 18px;
+    line-height: 150%; /* 1.5 */
+    letter-spacing: 0.22em; /* 22% */
+    margin: 0;
+}
+
+/* Categoria */
+.project-category {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Semibold */
+    font-size: 16px;
+    line-height: 150%; /* 1.5 */
+    letter-spacing: 0.22em; /* 22% */
+    margin: 0;
+}
+
+/* Botão CTA */
+.cta-button-fixed {
+    display: flex;
+    justify-content: center; /* Alinha texto horizontalmente */
+    align-items: center; /* Alinha texto verticalmente */
+    width: 192px; /* Largura fixa */
+    height: 48px; /* Altura fixa */
+    background-color: transparent;
+    border: 1px solid #fff; /* Borda branca */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Semibold */
+    font-size: 12px;
+    line-height: 150%; /* 1.5 */
+    letter-spacing: 0.22em; /* 22% */
+    text-transform: uppercase; /* Texto em caixa alta */
+    color: #fff;
+    text-decoration: none; /* Remove sublinhado */
+    padding: 0; /* Remove espaçamento extra */
+    box-sizing: border-box; /* Inclui bordas no tamanho total */
+    cursor: pointer; /* Cursor de botão */
+}
+
+/* Botão no estado de hover */
+.cta-button-fixed:hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center; /* Configura para centralizar */
+    align-items: center; /* Configura para centralizar */
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+
+.modal-link {
+    margin-top: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.modal-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ===================================================
+   NAVEGAÇÃO
+   =================================================== */
+   .main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0 20px 0 ;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    background-color: transparent;
+    margin-top: 30px; /* Margem do topo */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    font-weight: normal; /* Sem negrito inicialmente */
+}
+
+
+/* Hover nos links */
+.nav-link:hover {
+    font-weight: bold; /* Quando hover em qualquer link, fica negrito */
+}
+
+/* Quando o "INÍCIO" não estiver ativo, remove o negrito */
+.nav-link:not(:first-of-type):hover {
+    font-weight: bold; /* Quando hover em outros, fica negrito */
+}
+
+
+
+
+
+
+/* Filtro de Categorias */
+.filter-menu {
+    text-align: center;
+}
+
+.filter-menu p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.categories {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.category:hover {
+    font-weight: 700;
+}
+
+.separator {
+    color: #000;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+/* Estilos do botão de filtragem ativo */
+.category.active {
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+/* ===================================================
+   SOBRE
+   =================================================== */
+#about {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 120px;
+}
+
+.about-text {
+    text-align: left;
+    max-width: 1440px;
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 0.066em;
+    margin-bottom: 40px;
+}
+
+.about-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.018em;
+    margin-bottom: 40px;
+}
+
+.about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.link {
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.services-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.services {
+    max-width: 575px;
+}
+
+.services-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.018em;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.022em;
+}
+
+.contact-form {
+    max-width: 770px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-fields {
+    display: flex;
+    gap: 24px;
+}
+
+.form-input {
+    width: 385px;
+    height: 55px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-textarea {
+    width: 100%;
+    height: 255px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-submit {
+    
+        display: flex;
+        justify-content: center; /* Alinha o texto horizontalmente */
+        align-items: center; /* Alinha o texto verticalmente */
+        width: 192px;
+        height: 48px; /* Altura fixa do botão */
+        background-color: transparent;
+        border: 1px solid #000000;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #000000;
+        text-decoration: none;
+        padding: 0; /* Remove qualquer padding extra */
+        box-sizing: border-box; /* Garante que a altura seja respeitada, incluindo a borda */
+        line-height: 48px; /* Garante que o texto tenha a altura do botão */
+
+}
+
+.form-submit:hover {
+    opacity: 0.9;
+}
+.about-banner {
+    width: 1440px;
+    height: 212px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 120px;
+}
+
+.about-banner::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background: linear-gradient(90deg, #1D5C82, #2FA1B3, #5BC8D0);
+    animation: animateBannerGradient 20s infinite linear alternate;
+    filter: blur(50px);
+}
+
+@keyframes animateBannerGradient {
+    0% {
+        transform: scale(1) translateX(-10%);
+    }
+    50% {
+        transform: scale(1.2) translateX(10%);
+    }
+    100% {
+        transform: scale(1) translateX(-10%);
+    }
+}
+
+.about-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
